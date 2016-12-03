@@ -5,6 +5,7 @@ var https = require('https');
 
 var express = require('express');
 var app = express();
+app.use(express.static('public'))
 
 var options = {
   key: fs.readFileSync('security/file.pem'),
@@ -22,7 +23,7 @@ app.get('/', function(req, res) {
 
 io.on('connection', function(socket){
   console.log('New socket connection from secure server!');
-  socket.emit('text', 'This message is comming from a secure server!')
+  socket.emit('message', 'This message is comming from a secure server!')
 });
 
 server.listen(serverPort, function(){
