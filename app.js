@@ -7,11 +7,11 @@ var express = require('express');
 var app = express();
 
 var options = {
-  key: fs.readFileSync('./security/file.pem');
-  cert: fs.readFileSync('./security/file.crt');
+  key: fs.readFileSync('security/file.pem'),
+  cert: fs.readFileSync('security/file.cert')
 };
 
-var serverPort = 443;
+var serverPort = 3000;
 
 var server = https.createServer(options, app);
 var io = require('socket.io')(server);
