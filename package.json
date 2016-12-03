@@ -1,0 +1,11 @@
+{
+  "name": "mobile-chat-pos",
+  "version": "0.1.0",
+  "description": "A https server that facilitates chat as well as payment tranfer and image recognition.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "niquedasneak",
+  "license": "MIT"
+}
