@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+.buy, .sell {
+    height: 50vh;
+    width: 100vw;
+    color: white;
+}
+
+.buy, .sell > div {
+  text-align: center;
+  font-size: 8vh;
+line-height: 50vh;
+}
+
+.buy {
+    background-color: grey;
+}
+
+.sell {
+    background-color: darkgrey;
+}
