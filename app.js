@@ -19,22 +19,32 @@ var server = https.createServer(options, app);
 var io = require('socket.io')(server);
 
 // ROUTES
-app.get('/', function(req, res){
-    res.sendFile(__dirname + '/public/views/index.html')
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/public/views/index.html');
 });
 
-app.get('/buyer-chat', function(req, res){
-  res.send('buyer chat');
+app.get('/buyer-chat', function(req, res) {
+    res.sendFile(__dirname + '/public/views/buyer-chat.html')
 });
 
-app.get('/seller-home', function(req, res){
-  res.send('seller home');
+app.get('/seller-home', function(req, res) {
+    res.send('seller home');
 });
 
 // SOCKET
 io.on('connection', function(socket) {
-    console.log('New socket connection from secure server!');
+    console.log('new user w/ secure connection... ');
+    socket.on('disconnect', function() {
+        console.log('user disconnected');
+    });
 
+    socket.on('buyer-chat-active', function(){
+      socket.emit('welcome-message');
+    });
+
+    socket.on('chat message', function(msg){
+       console.log('message: ' + msg);
+     });
 });
 
 // SERVER LISTENING
