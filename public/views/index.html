@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Mobile Chat POS</title>
     <script src="/socket.io/socket.io.js"></script>
-    <link rel="stylesheet" href="public/static/index.css">
-  </head>
-  <body>
-<h1>Served up from a secure server</h1>
+    <link rel="stylesheet" href="css/index.css">
+</head>
 
-<hr>
+<body>
 
-<script type="text/javascript">
-  var URL_SERVER = 'https://localhost:3000';
-  var socket = io.connect(URL_SERVER);
+    <div class="sell">
+        <div>I Need To Sell</div>
+    </div>
+    <div class="buy">
+        <div>I Want To Buy</div>
+    </div>
 
-</script>
-  </body>
+    <script type="text/javascript">
+        var URL_SERVER = 'https://localhost:3000';
+        var socket = io.connect(URL_SERVER);
+    </script>
+</body>
+
 </html>
