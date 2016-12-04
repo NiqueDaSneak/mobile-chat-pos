@@ -6,12 +6,13 @@ body {
     height: 50vh;
     width: 100vw;
     color: white;
+    text-align: center;
+    font-size: 8vh;
+    line-height: 50vh;
 }
 
-.buy, .sell > div {
-  text-align: center;
-  font-size: 8vh;
-line-height: 50vh;
+a {
+    text-decoration: none !important;
 }
 
 .buy {
