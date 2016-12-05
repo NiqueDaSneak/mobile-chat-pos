@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+}
+
+
+/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
+form {
+    background: #000;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+form input {
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    border: 0;
+    width: 75vw;
+    background-color: grey;
+    height: 8vh;
+    color: white;
+    font-size: 3vh;
+}
+
+form button {
+    position: fixed;
+    bottom: 0;
+    width: 24.4vw;
+    background: rgb(130, 224, 255);
+    border: none;
+    height: 8vh;
+    font-size: 3vh;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages li {
+    padding: 5px 10px;
+    background: grey;
+}
+
+#messages li:nth-child(odd) {
+    background: darkgrey;
+}
+
+.ui {
+  display: flex;
+  margin: auto;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+}
+
+.ui > span {
+  background-color: tan;
+  color: white;
+  padding: 3vh;
+  font-size: 3vh;
+  text-align: center;
+  width: 33vw;
+}
+
+input[type=file] {
+  position:absolute;
+   top:-100px;
+}
