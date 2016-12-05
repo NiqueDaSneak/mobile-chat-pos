@@ -1,8 +1,8 @@
 'use strict'
 
-var URL_SERVER = 'http://www.mobile-chat-pos.herokuapp.com';
-var socket = io.connect(URL_SERVER);
-
+// var URL_SERVER = 'http://www.mobile-chat-pos.herokuapp.com';
+// var socket = io.connect(URL_SERVER);
+var socket = io();
 
 $(document).ready(function(){
 
