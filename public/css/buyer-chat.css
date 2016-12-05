@@ -47,8 +47,31 @@ form button {
 
 #messages li {
     padding: 5px 10px;
+    background: grey;
 }
 
 #messages li:nth-child(odd) {
-    background: #eee;
+    background: darkgrey;
+}
+
+.ui {
+  display: flex;
+  margin: auto;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+}
+
+.ui > span {
+  background-color: tan;
+  color: white;
+  padding: 3vh;
+  font-size: 3vh;
+  text-align: center;
+  width: 33vw;
+}
+
+input[type=file] {
+  position:absolute;
+   top:-100px;
 }
