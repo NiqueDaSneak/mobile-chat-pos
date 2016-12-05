@@ -1,6 +1,6 @@
 'use strict'
 
-var URL_SERVER = 'http://www.mobile-chat-pos.herokuapp.com' || 'http://localhost:3000';
+var URL_SERVER = 'http://localhost:3000' || 'http://www.mobile-chat-pos.herokuapp.com';
 var socket = io.connect(URL_SERVER);
 
 
