@@ -1,8 +1,11 @@
+'use strict'
+
 var URL_SERVER = 'https://localhost:3000';
 var socket = io.connect(URL_SERVER);
 
 
 $(document).ready(function(){
+  
   socket.emit('buyer-chat-active');
 
   socket.on('welcome-message', function(){
@@ -26,11 +29,4 @@ $(document).ready(function(){
     socket.emit('nav', { ui: "account" });
   });
 
-
-
-  // $('form').submit(function(){
-  //   socket.emit('chat message', $('#m').val());
-  //   $('#m').val('');
-  //   return false;
-  // });
 });
