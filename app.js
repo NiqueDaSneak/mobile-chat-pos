@@ -1,30 +1,19 @@
 'use strict'
 
-var fs = require('fs');
 var express = require('express');
-var app = require('express')();
-var server = require('http').Server(app);
-// var https = require('https');
-var cors = require('cors')
 
-app.use(express.static('public'));
-app.use(cors());
-
-var io = require('socket.io')(server);
-
-
-//LOAD HTTPS SERVER
-// var options = {
-//     key: fs.readFileSync('security/file.pem'),
-//     cert: fs.readFileSync('security/file.cert')
-// };
-
-var serverPort = process.env.PORT || 3000;
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
 
 // SERVER LISTENING
+var serverPort = process.env.PORT || 3000;
 server.listen(serverPort, function() {
-  console.log("Secure server up at port " + serverPort);
+  console.log("Server up at port " + serverPort);
 });
+
+app.use(express.static('public'));
+
 
 // ROUTES
 app.get('/', function(req, res) {
