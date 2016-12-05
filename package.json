@@ -1,17 +1,18 @@
 {
-    "name": "mobile-chat-pos",
-    "version": "0.1.0",
-    "description": "A https server that facilitates chat as well as payment tranfer and image recognition.",
-    "main": "app.js",
-    "scripts": {
-        "start": "node app.js"
-    },
-    "author": "niquedasneak",
-    "license": "MIT",
-    "dependencies": {
-        "express": "^4.14.0",
-        "fs": "0.0.1-security",
-        "https": "^1.0.0",
-        "socket.io": "^1.7.1"
-    }
+  "name": "mobile-chat-pos",
+  "version": "0.1.0",
+  "description": "A https server that facilitates chat as well as payment tranfer and image recognition.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "niquedasneak",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "https": "^1.0.0",
+    "socket.io": "^1.7.1"
+  }
 }

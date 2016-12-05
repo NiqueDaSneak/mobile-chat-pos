@@ -1,11 +1,11 @@
 'use strict'
 
-var URL_SERVER = 'https://localhost:3000';
+var URL_SERVER = 'http://www.mobile-chat-pos.herokuapp.com' || 'http://localhost:3000';
 var socket = io.connect(URL_SERVER);
 
 
 $(document).ready(function(){
-  
+
   socket.emit('buyer-chat-active');
 
   socket.on('welcome-message', function(){
