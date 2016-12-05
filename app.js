@@ -13,7 +13,7 @@ var options = {
     cert: fs.readFileSync('security/file.cert')
 };
 
-var serverPort = 3000;
+var serverPort = process.env.PORT || 3000;
 
 var server = https.createServer(options, app);
 var io = require('socket.io')(server);
@@ -33,6 +33,7 @@ app.get('/seller-home', function(req, res) {
 
 // SOCKET
 io.on('connection', function(socket) {
+
     console.log('new user w/ secure connection... ');
     socket.on('disconnect', function() {
         console.log('user disconnected');
@@ -58,9 +59,6 @@ io.on('connection', function(socket) {
         }
     });
 
-    // socket.on('chat message', function(msg){
-    //    console.log('message: ' + msg);
-    //  });
 });
 
 // SERVER LISTENING
