@@ -37,6 +37,7 @@ app.get('/seller-home', function(req, res) {
 
 // SOCKET
 io.on('connection', function(socket) {
+    var cartTotal = 0;
 
     // CREATE CONNECTION TO CLIENT
     console.log('new user w/ secure connection... ');
@@ -62,9 +63,16 @@ io.on('connection', function(socket) {
                 ss(socket).on('file-upload', function(stream, data) {
                     var filename = data.name
                     stream.pipe(fs.createWriteStream(filename));
-                    socket.emit('message', {
-                      server: 'Image recieved! Your cart has one item.'
-                    });
+                    cartTotal += 1;
+                    if (cartTotal < 2) {
+                        socket.emit('message', {
+                            server: 'Image recieved! Your cart has one item.'
+                        });
+                    } else {
+                        socket.emit('message', {
+                            server: 'Image recieved! Your cart has ' + cartTotal + ' items.'
+                        });
+                    }
                 });
                 break;
             case "account":
