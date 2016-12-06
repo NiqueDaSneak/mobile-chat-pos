@@ -38,7 +38,6 @@ $(document).ready(function() {
             });
         });
 
-
         // HANDLES SENDING THE FILE TO SERVER
         $('#file_upload').change(function(event){
           var file = event.target.files[0];
