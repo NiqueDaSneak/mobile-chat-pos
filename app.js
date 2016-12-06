@@ -62,6 +62,9 @@ io.on('connection', function(socket) {
                 ss(socket).on('file-upload', function(stream, data) {
                     var filename = 'temp/' + data.name
                     stream.pipe(fs.createWriteStream(filename));
+                    socket.emit('message', {
+                      server: 'Image recieved! Your cart has one item.'
+                    });
                 });
                 break;
             case "account":
