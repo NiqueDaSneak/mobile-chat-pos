@@ -64,15 +64,9 @@ io.on('connection', function(socket) {
                     var filename = data.name
                     stream.pipe(fs.createWriteStream(filename));
                     cartTotal += 1;
-                    if (cartTotal < 2) {
-                        socket.emit('message', {
-                            server: 'Image recieved! Your cart has one item.'
-                        });
-                    } else {
-                        socket.emit('message', {
-                            server: 'Image recieved! Your cart has ' + cartTotal + ' items.'
-                        });
-                    }
+                    socket.emit('message', {
+                        server: 'Image recieved! Your cart has ' + cartTotal + ' item(s).'
+                    });
                 });
                 break;
             case "account":
