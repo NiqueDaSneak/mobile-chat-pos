@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Buyer Chat</title>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/socket.io-stream.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/buyer-chat-socket.js"></script>
     <link rel="stylesheet" href="css/buyer-chat.css">
@@ -16,12 +17,12 @@
     </ul>
 
     <div class="ui">
-      <span class="ui-1">Learn More</span>
-      <span class="ui-2">Send A Photo</span>
-      <span class="ui-3">Account Settings</span>
+        <span class="ui-1">Learn More</span>
+        <span class="ui-2">Send A Photo</span>
+        <span class="ui-3">Account Settings</span>
     </div>
 
-    <input type="file" id="take-picture" accept="image/*" value="Send A Photo">
+    <input type="file" id="file_upload" accept="image/*" value="Send A Photo">
 
 </body>
 

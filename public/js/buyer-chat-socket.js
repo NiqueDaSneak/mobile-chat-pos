@@ -1,32 +1,52 @@
 'use strict'
 
-// var URL_SERVER = 'http://www.mobile-chat-pos.herokuapp.com';
-// var socket = io.connect(URL_SERVER);
-var socket = io();
+// THIS IS FOR LOCAL DEVELOPMENT
+var URL_SERVER = 'http://localhost:3000';
+var socket = io.connect(URL_SERVER);
 
-$(document).ready(function(){
+// THIS IS FOR UPLOAD TO HEROKU
+// var socket = io();
 
-  socket.emit('buyer-chat-active');
+$(document).ready(function() {
 
-  socket.on('welcome-message', function(){
-    $('#messages').append("<li id='messages'>Welcome to the chat. Choose an option...</li>");
-  });
+    socket.on('connect', function() {
 
-  socket.on('message', function(data){
-    $('#messages').append("<li id='messages'>" + data.server + "</li>");
-  });
+        // DISPLAY WELCOME MESSAGE
+        $('#messages').append("<li id='messages'>Welcome to Mobile Chat POS. Choose an option...</li>");
 
-  $('.ui-1').click(function(){
-    socket.emit('nav', { ui: "learn" });
-  });
+        // DISPLAY MESSAGES FROM SERVER
+        socket.on('message', function(data) {
+            $('#messages').append("<li id='messages'>" + data.server + "</li>");
+        });
 
-  $('.ui-2').click(function(){
-    $('input').click();
-    socket.emit('nav', { ui: "camera" });
-  });
+        // SENDING UI INFO TO SERVER
+        $('.ui-1').click(function() {
+            socket.emit('nav', {
+                ui: "learn"
+            });
+        });
+        $('.ui-2').click(function() {
+            $('input').click();
+            socket.emit('nav', {
+                ui: "camera"
+            });
+        });
+        $('.ui-3').click(function() {
+            socket.emit('nav', {
+                ui: "account"
+            });
+        });
 
-  $('.ui-3').click(function(){
-    socket.emit('nav', { ui: "account" });
-  });
+
+        // HANDLES SENDING THE FILE TO SERVER
+        $('#file_upload').change(function(event){
+          var file = event.target.files[0];
+          var stream = ss.createStream();
+
+          ss(socket).emit('file-upload', stream, {name: file.name, size: file.size});
+          ss.createBlobReadStream(file).pipe(stream);
+        });
+    });
+
 
 });
