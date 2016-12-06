@@ -1,11 +1,12 @@
 'use strict'
 
 // THIS IS FOR LOCAL DEVELOPMENT
-var URL_SERVER = 'http://localhost:3000';
-var socket = io.connect(URL_SERVER);
+// var URL_SERVER = 'http://localhost:3000';
+// var socket = io.connect(URL_SERVER);
 
 // THIS IS FOR UPLOAD TO HEROKU
-// var socket = io();
+// var URL_SERVER = 'http://www.mobile-chat-pos.herokuapp.com';
+var socket = io();
 
 $(document).ready(function() {
 
