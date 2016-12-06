@@ -12,7 +12,7 @@ $(document).ready(function() {
     socket.on('connect', function() {
 
         // DISPLAY WELCOME MESSAGE
-        $('#messages').append("<li id='messages'>Welcome to the chat. Choose an option...</li>");
+        $('#messages').append("<li id='messages'>Welcome to Mobile Chat POS. Choose an option...</li>");
 
         // DISPLAY MESSAGES FROM SERVER
         socket.on('message', function(data) {
