@@ -1,1 +1,3 @@
-# mobile-chat-pos
+This web app was inspired by the Amazon video portraying the future of the retail experience (Amazon Go).
+https://www.youtube.com/watch?v=NrmMk1Myrxc
+While this may be the future, and sounds like an amazing experience, not all retail stores would be able to afford to invest in the technological infrastructure to make an experience like that possible. So I built a chat interface where people could take photos of the products they are buying as they shop, and then pay without having to wait in a line. My goal was to reimagine how retail experiences/locations would be created differently if the end goal were to not funnel everyone through the same checkout lane experience.
